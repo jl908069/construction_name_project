@@ -1,5 +1,5 @@
 # Construction Name Project
-A streamlit app to run construction names search using <code>df.csv</code>
+A streamlit app to search construction names using <code>df.csv</code>
 
 ### To run the app
 1. Clone the repo
