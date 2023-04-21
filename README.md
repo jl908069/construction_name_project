@@ -2,7 +2,6 @@
 A streamlit app to run construction names search using <code>df.csv</code>
 
 ### To run the app
-navigate to your directory that contains app.py
-
-
-run <code>streamlit run app.py</code>
+1. Clone the repo
+2. Navigate to your directory that contains <code>app.py</code>
+3. Run <code>streamlit run app.py</code>
