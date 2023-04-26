@@ -17,10 +17,10 @@ st.sidebar.header("Search here:")
 options0 = df.sort_values('language').language.unique().tolist()
 selected_options0 = st.sidebar.multiselect('Select the language:',options0)
 
-options1 = df.sort_values('spacy_constructions_title').spacy_constructions_title.unique().tolist()
+options1 = df.sort_values('potential_constructions').potential_constructions.unique().tolist()
 selected_options1 = st.sidebar.multiselect('Select the Potential Construction Names:',options1)
 
-df_selection = df[df["spacy_constructions_title"].isin(selected_options1)& df["language"].isin(selected_options0)]
+df_selection = df[df["potential_constructions"].isin(selected_options1)& df["language"].isin(selected_options0)]
 
 for n, (title,abstract) in enumerate(zip(df_selection['title'], df_selection['abstract']),1):
   st.write(f'''<h3>{title}</h3>
