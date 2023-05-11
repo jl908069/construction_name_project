@@ -17,8 +17,12 @@ st.sidebar.header("Search here:")
 options0 = df.sort_values('language').language.unique().tolist()
 selected_options0 = st.sidebar.multiselect('Select the language:',options0)
 
+df['potential_constructions']=df.potential_constructions.astype(str)
 options1 = df.sort_values('potential_constructions').potential_constructions.unique().tolist()
-selected_options1 = st.sidebar.multiselect('Select the Potential Construction Names:',options1)
+options1=[x.lower() for x in options1]
+op1=[a for a in options1 if options1.count(a) > 1] #filter out constructions that have a frequency lower than 1
+op1 = [*set(op1)]
+selected_options1 = st.sidebar.multiselect('Select the Potential Construction Names:',op1)
 
 df_selection = df[df["potential_constructions"].isin(selected_options1)& df["language"].isin(selected_options0)]
 
